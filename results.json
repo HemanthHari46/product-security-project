@@ -1,0 +1,33 @@
+{
+    "scanner": "Kubescape",
+    "version": "v3.0.34",
+    "scanTime": "2025-04-11T10:45:00Z",
+    "framework": "NSA",
+    "cluster": "minikube",
+    "findings": [
+        {
+            "resource": "Deployment/nginx-deployment",
+            "namespace": "default",
+            "control": "Privileged Container",
+            "status": "failed",
+            "severity": "critical",
+            "remediation": "Avoid running containers with privileged access."
+        },
+        {
+            "resource": "Pod/my-app",
+            "namespace": "default",
+            "control": "Run as Non-Root User",
+            "status": "warning",
+            "severity": "high",
+            "remediation": "Ensure containers are configured to run as non-root."
+        },
+        {
+            "resource": "ServiceAccount/default",
+            "namespace": "default",
+            "control": "Excessive Permissions",
+            "status": "failed",
+            "severity": "medium",
+            "remediation": "Restrict RBAC permissions of service accounts."
+        }
+    ]
+}
